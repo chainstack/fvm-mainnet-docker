@@ -7,7 +7,7 @@ RUN apt install -y git ssh wget
 
 WORKDIR /build
 
-RUN git clone --branch ntwk/hyperspace -v --progress https://github.com/Factor8Solutions/lotus.git .
+RUN git clone --branch v1.20.0-hyperspace-nv19 -v --progress https://github.com/filecoin-project/lotus.git .
 
 RUN wget https://sh.rustup.rs
 RUN mv index.html rustup-init
