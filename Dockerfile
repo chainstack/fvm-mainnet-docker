@@ -7,7 +7,7 @@ RUN apt install -y git ssh wget
 
 WORKDIR /build
 
-RUN git clone --branch v1.20.0-hyperpsace-0119 -v --progress https://github.com/filecoin-project/lotus.git .
+RUN git clone --branch fix/hyperspace-patch-receipt-events-20220123 -v --progress https://github.com/filecoin-project/lotus.git .
 
 RUN wget https://sh.rustup.rs
 RUN mv index.html rustup-init
