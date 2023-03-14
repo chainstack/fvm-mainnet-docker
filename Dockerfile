@@ -26,4 +26,3 @@ RUN apt update && apt install libhwloc-dev -y
 USER service
 
 ENTRYPOINT ["lotus", "daemon"]
-
