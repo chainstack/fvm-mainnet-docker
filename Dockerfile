@@ -7,7 +7,7 @@ RUN apt install -y git ssh wget
 
 WORKDIR /build
 
-RUN git clone --depth 1 --branch v1.20.3-rpc-p01 -v --progress https://github.com/filecoin-project/lotus.git .
+RUN git clone --depth 1 --branch v1.20.3-rpc-p01-hf02 -v --progress https://github.com/filecoin-project/lotus.git .
 
 SHELL ["/bin/bash", "-c"]
 RUN wget https://sh.rustup.rs -O rustup-init
