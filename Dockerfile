@@ -1,4 +1,4 @@
-FROM golang:1.19.12-buster AS builder_mainnet
+FROM golang:1.19.12 AS builder_mainnet
 
 RUN apt update
 RUN apt upgrade -y
@@ -17,7 +17,7 @@ RUN make clean all
 RUN make install
 
 
-FROM golang:1.19.12-buster
+FROM golang:1.19.12
 
 COPY --from=builder_mainnet /usr/local/bin /usr/local/bin
 RUN adduser --disabled-password --gecos "" --uid 1000 service
