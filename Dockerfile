@@ -1,4 +1,4 @@
-FROM golang:1.19.7-buster AS builder_mainnet
+FROM golang:1.19.12-buster AS builder_mainnet
 
 RUN apt update
 RUN apt upgrade -y
@@ -7,7 +7,7 @@ RUN apt install -y git ssh wget
 
 WORKDIR /build
 
-RUN git clone --depth 1 --branch v1.23.0 -v --progress https://github.com/filecoin-project/lotus.git .
+RUN git clone --depth 1 --branch v1.23.3 -v --progress https://github.com/filecoin-project/lotus.git .
 
 SHELL ["/bin/bash", "-c"]
 RUN wget https://sh.rustup.rs -O rustup-init
@@ -17,7 +17,7 @@ RUN make clean all
 RUN make install
 
 
-FROM golang:1.19.7-buster
+FROM golang:1.19.12-buster
 
 COPY --from=builder_mainnet /usr/local/bin /usr/local/bin
 RUN adduser --disabled-password --gecos "" --uid 1000 service
