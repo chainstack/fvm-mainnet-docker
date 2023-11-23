@@ -17,7 +17,7 @@ RUN make clean all
 RUN make install
 
 
-FROM golang:1.25.0
+FROM golang:1.20.7
 
 COPY --from=builder_mainnet /usr/local/bin /usr/local/bin
 RUN adduser --disabled-password --gecos "" --uid 1000 service
